@@ -830,3 +830,11 @@ $ git config --global user.email johndoe@example.com</code></pre>
 <li>
 <p>Subir en el espacio de moodle la URL del repositorio en GitHUB.</p>
 
+
+<h1 id="Autores de la entrega del Lab">Autores</h1>
+<li>
+<p>Ivan Camilo Rincon Saavedra</p>
+</li>
+<li>
+<p>Leonardo Galeano Garzon</p>
+</li>
