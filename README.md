@@ -5,8 +5,8 @@ Laboratorio 8 - MyBatis-Guice-PrimeFaces - 2020-2
 <h3 id="escuela-colombiana-de-ingeniería">Escuela Colombiana de Ingeniería</h3>
 <h3 id="procesos-de-desarrollo-de-software---pdsw">Ciclos de Vida del Desarrollo de Software - CVDS</h3>
 <h4 id="integración-de-capas-con-google-guice">Integración de Capas con Google Guice</h4>
-<p><img src="http://campusvirtual.escuelaing.edu.co/moodle/pluginfile.php/191971/mod_assign/intro/model.png" width="739" height="567"></p>
-<h1><img src="http://campusvirtual.escuelaing.edu.co/moodle/pluginfile.php/191971/mod_assign/intro/cmodel.png" width="837" height="720"></h1>
+<p><img src="https://github.com/Rincon10/CVDS-LAB08/blob/master/img/modeloBasesDeDatos.png" width="739" height="567"></p>
+<h1><img src="https://github.com/Rincon10/CVDS-LAB08/blob/master/img/modeloPOO.png" width="837" height="720"></h1>
 <h1 id="parte-i.-inicio-en-clase">Parte I. Inicio en clase</h1>
 <ol type="1">
 <li>
@@ -831,10 +831,12 @@ $ git config --global user.email johndoe@example.com</code></pre>
 <p>Subir en el espacio de moodle la URL del repositorio en GitHUB.</p>
 
 
+
 <h1 id="Autores de la entrega del Lab">Autores</h1>
+<ol type="1">
 <li>
-<p>Ivan Camilo Rincon Saavedra</p>
+<p>Ivan Camilo Rincon Saavedra <a href="https://github.com/Rincon10">Rincon10.</a></p>
 </li>
 <li>
-<p>Leonardo Galeano Garzon</p>
+<p>Leonardo Galeano Garzon <a href="https://github.com/Ersocaut">Ersocaut.</a></p>
 </li>
