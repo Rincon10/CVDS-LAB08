@@ -832,7 +832,7 @@ $ git config --global user.email johndoe@example.com</code></pre>
 
 
 
-<h1 id="Autores de la entrega del Lab">Autores</h1>
+<h1 id="Autores de la entrega del Lab">Autores De ejecucion del LAB</h1>
 <ol type="1">
 <li>
 <p>Ivan Camilo Rincon Saavedra <a href="https://github.com/Rincon10">Rincon10.</a></p>
