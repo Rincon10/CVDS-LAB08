@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+body, html {
+	height: 100%;
+}
+body {
+	text-align: center;
+	font-family: 'Times New Roman';
+	font-weight: 100;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	overflow: -moz-scrollbars-vertical;
+	-ms-scrollbar-highlight-color: aqua;
+}
+
+
+.formaCliente {
+//background: #222;
+//box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+	min-height: 300px;
+	margin: auto;
+	max-width: 50%;
+	padding: .5rem;
+}
+
+.input-text{
+	border: 1px solid white;
+	background: transparent;
+	color: white;
+	display: block;
+	margin: 1rem auto;
+	min-width: 1px;
+	padding: .25rem;
+	transition: 250ms background ease-in;
+}
+
+:focus {
+	background: white;
+	color: black;
+	transition: 250ms background ease-in;
+}
+
+.MyButton {
+	border: 1px solid white;
+	background: transparent;
+	color: white;
+	display: block;
+	margin: 1rem auto;
+	min-width: 1px;
+	padding: .25rem;
+	transition: 250ms background ease-in;
+}
+
+[class*=underlay] {
+	left: 0;
+	min-height: 100%;
+	min-width: 100%;
+	position: fixed;
+	top: 0;
+}
+.underlay-photo {
+
+	background: url('https://cdnb.artstation.com/p/assets/images/images/009/739/579/large/adam-williams-pantheon4.jpg?1520617768');
+	background-size: cover;
+	-webkit-filter: grayscale(30%);
+	z-index: -1;
+}
+.underlay-black {
+	background: rgba(0,0,0,0.7);
+	z-index: -1;
+}
+
+.scrollbars {
+	overflow-y:scroll; height:500px;
+}
