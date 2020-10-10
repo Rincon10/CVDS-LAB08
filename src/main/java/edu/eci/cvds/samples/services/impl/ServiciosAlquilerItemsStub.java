@@ -76,8 +76,13 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
     }
 
     @Override
-    public ItemRentado consultarItemsRentados(int idItem) throws ExcepcionServiciosAlquiler {
-        return null;
+    public ItemRentado consultarItemsRentados(int idItem,long idCliente) throws ExcepcionServiciosAlquiler {
+        if (mapaPrestamosPorIdCliente.containsKey(idItem)) {
+            return itemsrentados.get(idItem);
+        }
+        else{
+            throw new ExcepcionServiciosAlquiler("El item "+idItem+ " no esta alquilado.");
+        }
     }
 
     @Override
@@ -182,7 +187,7 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
     }
 
     @Override
-    public long consultarMultaAlquiler(int iditem,Date fechaDevolucion) throws ExcepcionServiciosAlquiler{
+    public long consultarMultaAlquiler(int iditem,Date fechaDevolucion,long idCliente) throws ExcepcionServiciosAlquiler{
         if (!itemsrentados.containsKey(iditem)){
             throw new ExcepcionServiciosAlquiler("El item "+iditem+"no esta en alquiler");
         }

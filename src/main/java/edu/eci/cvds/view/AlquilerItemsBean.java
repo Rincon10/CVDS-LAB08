@@ -1,6 +1,7 @@
 package edu.eci.cvds.view;
 
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
@@ -8,6 +9,7 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -20,9 +22,11 @@ import java.util.List;
 @ApplicationScoped
 public class AlquilerItemsBean extends BasePageBean {
     private long id=0;
+    private long costo = 0;
     private List<Cliente>clientes;
     private List<ItemRentado> itemsNoDevueltos;
     private Cliente selectedCliente;
+    private java.sql.Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 
     @Inject
     private ServiciosAlquiler serviciosAlquiler;
@@ -41,28 +45,49 @@ public class AlquilerItemsBean extends BasePageBean {
         try {
             serviciosAlquiler.registrarCliente( new Cliente(nombre,documento,telefono,direccion,email) );
         } catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
-            excepcionServiciosAlquiler.printStackTrace();
+        }
+    }
+
+    public void registrarItemRentado(int idItem,int numdias){
+        try {
+            Item item = serviciosAlquiler.consultarItem(idItem);
+            serviciosAlquiler.registrarAlquilerCliente(date,selectedCliente.getDocumento(),item,numdias);
+        }
+        catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
+        }
+
+    }
+
+    public void consultarCosto( int idItem,int numDias){
+        try {
+            costo = serviciosAlquiler.consultarCostoAlquiler(idItem,numDias);
+        } catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
+            costo=0;
         }
     }
 
     public void consultarItemsNoRentados(){
         try {
-            System.out.println("-----------------------------------");
-            System.out.println(selectedCliente);
-            System.out.println(serviciosAlquiler);
 
             itemsNoDevueltos =  serviciosAlquiler.consultarItemsCliente( selectedCliente.getDocumento());
-            System.out.println(itemsNoDevueltos);
-            System.out.println("devueltos");
-            System.out.println("-----------------------------------");
         }
         catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
-            excepcionServiciosAlquiler.printStackTrace();
+            id=0;
         }
+    }
+    public long consultarMulta(int idItem ){
+        try {
+            return serviciosAlquiler.consultarMultaAlquiler(idItem,date,selectedCliente.getDocumento() );
+        } catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
+            return 0;
+        }
+
+
     }
     public void resetItems(){itemsNoDevueltos=null;}
     public void reset(){
         id=0;
+        costo=0;
         clientes = null;
     }
     public List<Cliente> getClientes() {
@@ -95,5 +120,13 @@ public class AlquilerItemsBean extends BasePageBean {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getCosto() {
+        return costo;
+    }
+
+    public void setCosto(long costo) {
+        this.costo = costo;
     }
 }

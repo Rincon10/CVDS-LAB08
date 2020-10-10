@@ -20,12 +20,12 @@ import java.util.List;
  */
 public class MyBATISClienteDAO implements ClienteDAO {
     @Inject
-    private ClienteMapper ClienteMapper;
+    private ClienteMapper clienteMapper;
 
     @Override
     public Cliente load(long id) throws PersistenceException {
         try{
-            return ClienteMapper.consultarCliente(id);
+            return clienteMapper.consultarCliente(id);
         }
         catch (org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al consultar cliente con id " + id,e);
@@ -36,7 +36,7 @@ public class MyBATISClienteDAO implements ClienteDAO {
     @Override
     public void save(Cliente cli) throws PersistenceException {
         try{
-            ClienteMapper.agregarCliente(cli);
+            clienteMapper.agregarCliente(cli);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al agregar cliente.",e);
@@ -47,9 +47,10 @@ public class MyBATISClienteDAO implements ClienteDAO {
     @Override
     public void agregarItemRentado(long docu, int id, Date fechaini, Date fechafin) throws PersistenceException {
         try{
-            ClienteMapper.agregarItemRentadoACliente(docu,id,fechaini,fechafin);
+            clienteMapper.agregarItemRentadoACliente(docu,id,fechaini,fechafin);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
+            System.out.println("entre1");
             throw new PersistenceException("Error al agregar item rentado con id " + id + " al cliente con documento " + docu +".",e);
         }
     }
@@ -57,7 +58,7 @@ public class MyBATISClienteDAO implements ClienteDAO {
     @Override
     public List<Cliente> consultarClientes() throws PersistenceException {
         try{
-            return ClienteMapper.consultarClientes();
+            return clienteMapper.consultarClientes();
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al consultar.",e);
@@ -68,7 +69,7 @@ public class MyBATISClienteDAO implements ClienteDAO {
     @Override
     public void vetar(long docu, boolean estado) throws PersistenceException {
         try{
-            ClienteMapper.vetar(docu,estado);
+            clienteMapper.vetar(docu,estado);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
             throw new PersistenceException("Error al vetar.",e);

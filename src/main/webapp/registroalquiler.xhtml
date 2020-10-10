@@ -10,10 +10,34 @@
 </h:head>
 
 <h:body>
-    <p:commandButton id="volverCliente" value="Volver a clientes" action="#{navigationController.paginaCliente}"/>
+    <div>
+        <p:commandButton id="volverCliente" styleClass="MyButton" value="Volver a clientes" action="#{navigationController.paginaCliente}"/>
+    </div>
+
     <div class="scrollbars">
+        <h:form id="registrosItems" class="formaCliente" >
+            <h1 style="color: white"> Registrar Un Nuevo Alquiler Para el cliente #{alquiler.selectedCliente.nombre}</h1>
+            <p:inputText id="id" styleClass="input-text" type="int" required="true" placeholder="Id del Item" binding="#{id}" />
+            <p:inputText id="numDias" styleClass="input-text" type="int" required="true" placeholder="Numero de dias" binding="#{numDias}" />
+            <p:outputLabel style="color: white" value="Costo del alquiler: #{alquiler.costo}"/>
+            <table align="center">
+                <tr>
+                    <td>
+                        <p:commandButton value="Registrar" update="ItemNoDevultosForm" class="MyButton"
+                                         actionListener="#{alquiler.registrarItemRentado(id.value,numDias.value)}">
+                            <p:ajax render="infoItemNoDevueltos"/>
+                        </p:commandButton>
+                    </td>
+                    <td>
+                        <p:commandButton value="Consultar" class="MyButton" update="registrosItems"
+                                         actionListener="#{alquiler.consultarCosto( id.value,numDias.value)}"/>
+
+                    </td>
+                </tr>
+            </table>
+        </h:form>
         <h:form id="ItemNoDevultosForm" class="formaCliente">
-            <h1 style="color: white"> Items no devueltos</h1>
+            <h1 style="color: white"> Items no devueltos </h1>
 
             <p:dataTable id="infoItemNoDevueltos" value="#{alquiler.itemsNoDevueltos}"
                          var="itemrentado"
@@ -24,7 +48,7 @@
                          currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
                          rowsPerPageTemplate="1,5,10,15">
                 <f:facet name="header">
-                    Items No Devueltos
+                    Items No Devueltos del Usuario: #{alquiler.selectedCliente.nombre}
                 </f:facet>
                 <p:column headerText="Id Renta">
                     <P:outputLabel value="#{itemrentado.id}"/>
@@ -39,7 +63,7 @@
                     <P:outputLabel value="#{itemrentado.fechafinrenta}"/>
                 </p:column>
                 <p:column headerText="Multa">
-                    <P:outputLabel value="#{itemrentado.fechafinrenta}"/>
+                    <P:outputLabel value="#{alquiler.consultarMulta(itemrentado.id)}"/>
                 </p:column>
             </p:dataTable>
             <table align="center">

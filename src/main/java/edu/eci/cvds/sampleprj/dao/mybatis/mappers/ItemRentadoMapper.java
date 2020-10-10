@@ -34,7 +34,7 @@ public interface ItemRentadoMapper {
      * @return ItemRentado, informacion de la renta del item
      * @throws PersistenceException, si existe algun error de persitencia al buscar el item rentado
      */
-    public ItemRentado consultarItemRentado( @Param("idItem") int idItem );
+    public ItemRentado consultarItemRentado( @Param("idItem") int idItem ,@Param("idcli") long idCliente);
 
 
 }
