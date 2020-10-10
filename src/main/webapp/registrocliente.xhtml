@@ -55,6 +55,14 @@
 			<table align="center">
 				<tr>
 					<td>
+						<p:outputLabel value="Id Cliente:" style="color: white"/>
+					</td>
+					<td>
+						<p:inputText id="idCliente" styleClass="input-text" type="long" value="#{alquiler.id}" style="width: 100px"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
 						<p:commandButton id="ConsultButton" value="Consultar" update="MuestraCliente" class="MyButton"
 										 actionListener="#{alquiler.consultarClientes}">
 							<p:ajax render="MuestraCliente"/>

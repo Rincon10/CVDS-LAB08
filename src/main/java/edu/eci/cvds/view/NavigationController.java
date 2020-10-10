@@ -10,7 +10,6 @@ public class NavigationController implements Serializable {
     public String paginaCliente() {
         return "registrocliente";
     }
-
     public String paginaItem() {
         return "registroalquiler";
     }

@@ -7,7 +7,9 @@ import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import java.util.Arrays;
 import java.util.List;
+
 
 /**
  * @author Iván Camilo Rincón Saavedra
@@ -17,17 +19,21 @@ import java.util.List;
 @ManagedBean(name = "alquiler")
 @ApplicationScoped
 public class AlquilerItemsBean extends BasePageBean {
-    @Inject
-    private ServiciosAlquiler serviciosAlquiler;
+    private long id=0;
     private List<Cliente>clientes;
     private List<ItemRentado> itemsNoDevueltos;
     private Cliente selectedCliente;
 
+    @Inject
+    private ServiciosAlquiler serviciosAlquiler;
+
+
+
     public void consultarClientes(){
         try {
-            clientes = serviciosAlquiler.consultarClientes();
+            clientes = (id == 0)?serviciosAlquiler.consultarClientes():Arrays.asList(serviciosAlquiler.consultarCliente(id));
         } catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
-            excepcionServiciosAlquiler.printStackTrace();
+            reset();
         }
     }
 
@@ -39,16 +45,24 @@ public class AlquilerItemsBean extends BasePageBean {
         }
     }
 
-    public void cosultarItemsNoRentados(){
+    public void consultarItemsNoRentados(){
         try {
-            itemsNoDevueltos =  serviciosAlquiler.consultarCliente( selectedCliente.getDocumento() ).getRentados();
-        } catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
+            System.out.println("-----------------------------------");
+            System.out.println(selectedCliente);
+            System.out.println(serviciosAlquiler);
+
+            itemsNoDevueltos =  serviciosAlquiler.consultarItemsCliente( selectedCliente.getDocumento());
+            System.out.println(itemsNoDevueltos);
+            System.out.println("devueltos");
+            System.out.println("-----------------------------------");
+        }
+        catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
             excepcionServiciosAlquiler.printStackTrace();
         }
-
     }
-
+    public void resetItems(){itemsNoDevueltos=null;}
     public void reset(){
+        id=0;
         clientes = null;
     }
     public List<Cliente> getClientes() {
@@ -65,5 +79,21 @@ public class AlquilerItemsBean extends BasePageBean {
 
     public void setSelectedCliente(Cliente selectedCliente) {
         this.selectedCliente = selectedCliente;
+    }
+
+    public List<ItemRentado> getItemsNoDevueltos() {
+        return itemsNoDevueltos;
+    }
+
+    public void setItemsNoDevueltos(List<ItemRentado> itemsNoDevueltos) {
+        this.itemsNoDevueltos = itemsNoDevueltos;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

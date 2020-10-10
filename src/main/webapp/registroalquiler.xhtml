@@ -5,16 +5,62 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui" xmlns:P="http://java.sun.com/jsf/html">
 <h:head>
-    <title>Registrar de alquileres</title>
+    <title>Registrar de Items</title>
     <link rel="stylesheet" href="design.css"/>
 </h:head>
 
 <h:body>
-
+    <p:commandButton id="volverCliente" value="Volver a clientes" action="#{navigationController.paginaCliente}"/>
     <div class="scrollbars">
-        <h:dataTable id="infoItemNoDevueltos" value="#{alquiler.}">
+        <h:form id="ItemNoDevultosForm" class="formaCliente">
+            <h1 style="color: white"> Items no devueltos</h1>
 
-        </h:dataTable>
+            <p:dataTable id="infoItemNoDevueltos" value="#{alquiler.itemsNoDevueltos}"
+                         var="itemrentado"
+                         rowKey="#{itemrentado.id}"
+                         rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                         rowsPerPageTemplate="1,5,10,15">
+                <f:facet name="header">
+                    Items No Devueltos
+                </f:facet>
+                <p:column headerText="Id Renta">
+                    <P:outputLabel value="#{itemrentado.id}"/>
+                </p:column>
+                <p:column headerText="Item Rentado">
+                    <P:outputLabel value="#{itemrentado.item.nombre}"/>
+                </p:column>
+                <p:column headerText="Fecha Inicio Renta">
+                    <P:outputLabel value="#{itemrentado.fechainiciorenta}"/>
+                </p:column>
+                <p:column headerText="Fecha Fin Renta">
+                    <P:outputLabel value="#{itemrentado.fechafinrenta}"/>
+                </p:column>
+                <p:column headerText="Multa">
+                    <P:outputLabel value="#{itemrentado.fechafinrenta}"/>
+                </p:column>
+            </p:dataTable>
+            <table align="center">
+                <tr>
+                    <td>
+                        <p:commandButton id="consultar" value="Consultar" update="infoItemNoDevueltos" class="MyButton"
+                                         actionListener="#{alquiler.consultarItemsNoRentados}">
+                            <p:ajax render="infoItemNoDevueltos"/>
+                        </p:commandButton>
+                    </td>
+                    <td>
+                        <p:commandButton id="borrar" value="Borrar" update="infoItemNoDevueltos" class="MyButton"
+                                         actionListener="#{alquiler.resetItems}">
+                            <p:ajax render="infoItemNoDevueltos"/>
+                        </p:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+
+
     </div>
 
     <div class="underlay-photo"></div>
