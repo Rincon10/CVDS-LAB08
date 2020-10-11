@@ -31,10 +31,11 @@ public interface ItemRentadoMapper {
     /**
      * Metodo que consulta la informacion de un item que ha sido rentado
      * @param idItem, id del item a buscar y que este rentado
+     * @param idCliente, id del cliente que rento el item
      * @return ItemRentado, informacion de la renta del item
      * @throws PersistenceException, si existe algun error de persitencia al buscar el item rentado
      */
-    public ItemRentado consultarItemRentado( @Param("idItem") int idItem ,@Param("idcli") long idCliente);
+    public ItemRentado consultarItemRentado( @Param("idItem") int idItem, @Param("idCliente") long idCliente );
 
 
 }

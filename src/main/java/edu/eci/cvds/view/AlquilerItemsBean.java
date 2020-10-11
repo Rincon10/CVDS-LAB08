@@ -31,8 +31,6 @@ public class AlquilerItemsBean extends BasePageBean {
     @Inject
     private ServiciosAlquiler serviciosAlquiler;
 
-
-
     public void consultarClientes(){
         try {
             clientes = (id == 0)?serviciosAlquiler.consultarClientes():Arrays.asList(serviciosAlquiler.consultarCliente(id));
@@ -68,7 +66,6 @@ public class AlquilerItemsBean extends BasePageBean {
 
     public void consultarItemsNoRentados(){
         try {
-
             itemsNoDevueltos =  serviciosAlquiler.consultarItemsCliente( selectedCliente.getDocumento());
         }
         catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
@@ -77,7 +74,7 @@ public class AlquilerItemsBean extends BasePageBean {
     }
     public long consultarMulta(int idItem ){
         try {
-            return serviciosAlquiler.consultarMultaAlquiler(idItem,date,selectedCliente.getDocumento() );
+            return serviciosAlquiler.consultarMultaAlquiler(idItem,date,selectedCliente.getDocumento());
         } catch (ExcepcionServiciosAlquiler excepcionServiciosAlquiler) {
             return 0;
         }

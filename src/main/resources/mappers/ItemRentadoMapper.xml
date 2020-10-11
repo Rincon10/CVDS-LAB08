@@ -26,7 +26,7 @@
                 INNER JOIN VI_ITEMS AS i ON ir.ITEMS_id=i.id
                 INNER JOIN VI_TIPOITEM AS ti ON i.TIPOITEM_id=ti.id;
     </select>
-    <select id="consultarItemRentado" parameterType="map" resultMap="ItemRentadoResult">
+    <select id="consultarItemsRentados" parameterType="map" resultMap="ItemRentadoResult">
         SELECT
                 ir.id AS ir_id,
                 ir.fechainiciorenta AS ir_fechainiciorenta ,
@@ -70,9 +70,8 @@
                 INNER JOIN VI_ITEMS AS i ON ir.ITEMS_id=i.id
                 INNER JOIN VI_TIPOITEM AS ti ON i.TIPOITEM_id=ti.id
                 WHERE #{idItem} = ir.ITEMS_id AND
-                    #{idcli} = ir.CLIENTES_documento
+                	  #{idCliente} = ir.CLIENTES_documento
                 LIMIT 1;
-
     </select>
     <resultMap id="ItemRentadoResult" type="ItemRentado" >
         <id property="id" column="ir_id"/>

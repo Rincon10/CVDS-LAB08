@@ -27,6 +27,10 @@ body {
 	padding: .5rem;
 }
 
+forma {
+	display: inline;
+}
+
 .input-text{
 	border: 1px solid white;
 	background: transparent;

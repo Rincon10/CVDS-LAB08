@@ -17,20 +17,20 @@
     <div class="scrollbars">
         <h:form id="registrosItems" class="formaCliente" >
             <h1 style="color: white"> Registrar Un Nuevo Alquiler Para el cliente #{alquiler.selectedCliente.nombre}</h1>
-            <p:inputText id="id" styleClass="input-text" type="int" required="true" placeholder="Id del Item" binding="#{id}" />
+            <p:inputText id="idItem" styleClass="input-text" type="int" required="true" placeholder="Id del Item" binding="#{idItem}" />
             <p:inputText id="numDias" styleClass="input-text" type="int" required="true" placeholder="Numero de dias" binding="#{numDias}" />
             <p:outputLabel style="color: white" value="Costo del alquiler: #{alquiler.costo}"/>
             <table align="center">
                 <tr>
                     <td>
                         <p:commandButton value="Registrar" update="ItemNoDevultosForm" class="MyButton"
-                                         actionListener="#{alquiler.registrarItemRentado(id.value,numDias.value)}">
+                                         actionListener="#{alquiler.registrarItemRentado(idItem.value,numDias.value)}">
                             <p:ajax render="infoItemNoDevueltos"/>
                         </p:commandButton>
                     </td>
                     <td>
                         <p:commandButton value="Consultar" class="MyButton" update="registrosItems"
-                                         actionListener="#{alquiler.consultarCosto( id.value,numDias.value)}"/>
+                                         actionListener="#{alquiler.consultarCosto( idItem.value,numDias.value)}"/>
 
                     </td>
                 </tr>
@@ -62,8 +62,11 @@
                 <p:column headerText="Fecha Fin Renta">
                     <P:outputLabel value="#{itemrentado.fechafinrenta}"/>
                 </p:column>
+                <p:column headerText="Tarifa Por dia">
+                    <P:outputLabel value="#{itemrentado.item.tarifaxDia}"/>
+                </p:column>
                 <p:column headerText="Multa">
-                    <P:outputLabel value="#{alquiler.consultarMulta(itemrentado.id)}"/>
+                    <P:outputLabel value="#{alquiler.consultarMulta(itemrentado.item.id)}"/>
                 </p:column>
             </p:dataTable>
             <table align="center">
