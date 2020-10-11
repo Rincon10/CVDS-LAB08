@@ -4,6 +4,6 @@ machine:
 
 deployment:
   staging:
-    branch: circleci-project-setup
+    branch: master
     heroku: 
       appname: lab08-cvds
