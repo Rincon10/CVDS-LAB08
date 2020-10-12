@@ -12,14 +12,24 @@
 
 # __Clases de Equivalencia__
 
-![Imag1](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c1.png)
-![Imag2](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c2.png)
-![Imag3](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c3.png)
-![Imag4](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c4.png)
-![Imag5](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c5.png)
-![Imag6](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c6.png)
-![Imag7](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c7.png)
-![Imag8](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c8.png)
-![Imag9](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c9.png)
-![Imag10](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c10.png)
-![Imag11](https://github.com/Rincon10/CVDS-LAB08/tree/master/img/c11.png)
+![Imag1](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c1.png)
+
+![Imag2](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c2.png)
+
+![Imag3](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c3.png)
+
+![Imag4](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c4.png)
+
+![Imag5](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c5.png)
+
+![Imag6](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c6.png)
+
+![Imag7](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c7.png)
+
+![Imag8](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c8.png)
+
+![Imag9](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c9.png)
+
+![Imag10](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c10.png)
+
+![Imag11](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c11.png)
