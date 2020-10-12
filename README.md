@@ -33,3 +33,8 @@
 ![Imag10](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c10.png)
 
 ![Imag11](https://github.com/Rincon10/CVDS-LAB08/blob/circleci-project-setup/img/c11.png)
+
+### __Autores__
+
+* Camilo Rincón [Rincon10](https://github.com/Rincon10)
+* Leonardo Galeano [Ersocaut](https://github.com/Ersocaut)
