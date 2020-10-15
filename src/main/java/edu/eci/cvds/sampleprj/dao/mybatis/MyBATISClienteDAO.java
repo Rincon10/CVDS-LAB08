@@ -4,9 +4,6 @@ import edu.eci.cvds.sampleprj.dao.ClienteDAO;
 import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Cliente;
-import edu.eci.cvds.samples.entities.Item;
-import edu.eci.cvds.samples.entities.ItemRentado;
-import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import org.mybatis.guice.transactional.Transactional;
 
 import javax.inject.Inject;

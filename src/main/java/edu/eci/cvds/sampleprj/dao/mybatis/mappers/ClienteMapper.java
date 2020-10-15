@@ -2,10 +2,7 @@ package edu.eci.cvds.sampleprj.dao.mybatis.mappers;
 
 import java.util.Date;
 import java.util.List;
-
-import edu.eci.cvds.samples.entities.Item;
 import org.apache.ibatis.annotations.Param;
-
 import edu.eci.cvds.samples.entities.Cliente;
 
 /**

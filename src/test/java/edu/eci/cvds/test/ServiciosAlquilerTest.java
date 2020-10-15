@@ -25,7 +25,6 @@ public class ServiciosAlquilerTest {
     private long idCliente;
     private long tarifa;
     private int idItem;
-    private int idTipoItem;
     private int numDias;
     private boolean vetado;
 

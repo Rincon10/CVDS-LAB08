@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-body, html {
-	height: 100%;
-}
+body,
+html { height: 100%; }
+
 body {
 	text-align: center;
 	font-family: 'Times New Roman';
@@ -17,19 +17,16 @@ body {
 	-ms-scrollbar-highlight-color: aqua;
 }
 
-
 .formaCliente {
-//background: #222;
-//box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+	//background: #222;
+	//box-shadow: 0 0 1rem rgba(0,0,0,0.3);
 	min-height: 300px;
 	margin: auto;
 	max-width: 50%;
 	padding: .5rem;
 }
 
-forma {
-	display: inline;
-}
+forma {display: inline; }
 
 .input-text{
 	border: 1px solid white;
@@ -66,6 +63,7 @@ forma {
 	position: fixed;
 	top: 0;
 }
+
 .underlay-photo {
 
 	background: url('https://cdnb.artstation.com/p/assets/images/images/009/739/579/large/adam-williams-pantheon4.jpg?1520617768');
@@ -73,6 +71,7 @@ forma {
 	-webkit-filter: grayscale(30%);
 	z-index: -1;
 }
+
 .underlay-black {
 	background: rgba(0,0,0,0.7);
 	z-index: -1;
